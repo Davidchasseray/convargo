@@ -193,7 +193,7 @@ function SetThePrices()
     var commission = 0.01*Math.round(30* (deliveries[i].price-deductibleReduction))
     deliveries[i].commission.insurance+=commission*0.5
     commission-=deliveries[i].commission.insurance
-    var tax = Math.trunc(deliveries[i].distance/500)
+    var tax = Math.trunc(deliveries[i].distance/500)+1
     commission-=tax;
     deliveries[i].commission.treasury+=tax;
     deliveries[i].commission.convargo+=commission;
