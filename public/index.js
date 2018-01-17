@@ -158,7 +158,7 @@ function FindTheTruck(truckerId)
   return null;
 }
 
-function SetThePrices(deliveries)
+function SetThePrices()
 {
   var i =0;
   while (i<deliveries.length)
@@ -201,9 +201,59 @@ function SetThePrices(deliveries)
   }
 }
 
+function FindTheDeliver(deliverId)
+{
+  for(var i=0;i<deliveries.length;i++)
+  {
+    if(deliverId == deliveries[i].id)
+    {
+      return deliveries[i];
+    }
+  }
+  return null;
+}
+
+function PayForTheService()
+{
+  for(var i=0;i<actors.length;i++)
+  {
+    var delivery = FindTheDeliver(actors[i].deliveryId);
+    if(delivery!=null)
+    {
+      for(var j=0;j<actors[i].payment.length;j++)
+      {
+        var commission = 0;
+        if(delivery.options.deductibleReduction)
+        {
+          commission+=delivery.volume
+        }
+        switch(actors[i].payment[j].who)
+        {
+          case 'shipper':
+            actors[i].payment[j].amount = delivery.price;
+            break
+          case 'trucker':
+            actors[i].payment[j].amount = 0.01*Math.round(100*(delivery.price - commission - delivery.commission.convargo - delivery.commission.insurance - delivery.commission.treasury));
+            break
+          case 'treasury':
+            actors[i].payment[j].amount = delivery.commission.treasury
+            break
+          case 'insurance':
+            actors[i].payment[j].amount = delivery.commission.insurance
+            break
+          case 'convargo':
+              actors[i].payment[j].amount = delivery.commission.convargo + commission
+            break
+        }
+      }
+    }
+  }
+}
 
 
-SetThePrices(deliveries);
+
+SetThePrices();
+PayForTheService();
 console.log(truckers);
 console.log(deliveries);
 console.log(actors);
