@@ -11,28 +11,25 @@
 - [Introduction](#introduction)
 - [Objectives](#objectives)
 - [Just tell me what to do](#just-tell-me-what-to-do)
-- [Don't forget:](#dont-forget)
-- [Exercises](#exercises)
-  - [Exercise 1 - Euro-Volume](#exercise-1---euro-volume)
+  - [Don't forget:](#dont-forget)
+- [Steps to to](#steps-to-to)
+  - [Step 1 - Euro-Volume](#step-1---euro-volume)
     - [Shipping prices](#shipping-prices)
     - [Just tell me what to do](#just-tell-me-what-to-do-1)
-  - [Exercise 2 - Send more, pay less](#exercise-2---send-more-pay-less)
+  - [Step 2 - Send more, pay less](#step-2---send-more-pay-less)
     - [Decreasing pricing for high volumes](#decreasing-pricing-for-high-volumes)
     - [New price rules](#new-price-rules)
     - [Just tell me what to do](#just-tell-me-what-to-do-2)
-  - [Exercise 3 - Give me all your money](#exercise-3---give-me-all-your-money)
+  - [Step 3 - Give me all your money](#step-3---give-me-all-your-money)
     - [Commission](#commission)
     - [Just tell me what to do](#just-tell-me-what-to-do-3)
-  - [Exercice 4 - The famous deductible](#exercice-4---the-famous-deductible)
+  - [Step 4 - The famous deductible](#step-4---the-famous-deductible)
     - [The deductible](#the-deductible)
     - [Just tell me what to do](#just-tell-me-what-to-do-4)
-  - [Exercise 5 - Pay the actors](#exercise-5---pay-the-actors)
+  - [Step 5 - Pay the actors](#step-5---pay-the-actors)
     - [The actors](#the-actors)
     - [Just tell me what to do](#just-tell-me-what-to-do-5)
-  - [Exercise 6 - Rental modification](#exercise-6---rental-modification)
-    - [New dates and distance](#new-dates-and-distance)
-    - [Just tell me what to do](#just-tell-me-what-to-do-6)
-- [Source](#source)
+- [Source and inspiration](#source-and-inspiration)
 - [Licence](#licence)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -70,7 +67,7 @@ The next exercises goals are to
 1. Fork the project via `github`
 1. Clone the project `git clone https://github.com/YOUR_USERNAME/convargo`
 1. Solve each exercises inside [./public/index.js](./public/index.js) file with JavaScript
-1. Once the exercise is solved, commit something like `git add -A && git commit -m "feat(price): decrease pricing for longer rentals"` ([why following a convention?](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#commits))
+1. Once the exercise is solved, commit something like `git add -A && git commit -m "feat(price): decrease pricing for higher volume"` ([why following a convention?](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#commits))
 1. 5 exercises, so ideally 5 commits
 1. Don't forget to push before the end of the workshop
 1. Check that your codebase works by opening [/public/index.html](./public/index.html) in your browser
@@ -88,9 +85,9 @@ The next exercises goals are to
 
 Use `console.log` to display results (for the moment)**
 
-## Exercises
+## Steps to do
 
-### Exercise 1 - Euro-Volume
+### Step 1 - Euro-Volume
 
 #### Shipping prices
 
@@ -134,7 +131,7 @@ console.log(deliveries);
 ]
 ```
 
-### Exercise 2 - Send more, pay less
+### Step 2 - Send more, pay less
 
 #### Decreasing pricing for high volumes
 
@@ -177,7 +174,7 @@ console.log(deliveries);
 ]
 ```
 
-### Exercise 3 - Give me all your money
+### Step 3 - Give me all your money
 
 Now, it's time to pay the truckers
 
@@ -216,7 +213,7 @@ console.log(deliveries);
 ]
 ```
 
-### Exercice 4 - The famous deductible
+### Step 4 - The famous deductible
 
 In case of an accident/theft, convargo applies a 1000€ deductible.
 
@@ -235,7 +232,7 @@ Compute the new amount price if the shipper subscribed to `deductible option`.
 ```js
 const deliveries = ...;
 ...
-console.log(rentals);
+console.log(deliveries);
 
 //example output from console.log
 [
@@ -251,7 +248,7 @@ console.log(rentals);
 ]
 ```
 
-### Exercise 5 - Pay the actors
+### Step 5 - Pay the actors
 
 #### The actors
 

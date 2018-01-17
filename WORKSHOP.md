@@ -51,7 +51,7 @@ Focus on the price platform feature
 
 ---
 
-5 exercises
+5 steps
 
 ---
 
@@ -61,7 +61,7 @@ Focus on the price platform feature
 
 Euro-Volume
 
-Ex 1.
+Step 1.
 
 ---
 
@@ -76,7 +76,7 @@ shipping price = distance + volume
 
 Ship more, pay less
 
-Ex 2.
+Step 2.
 
 ---
 
@@ -90,7 +90,7 @@ Decreasing pricing
 
 Give me all your money
 
-Ex 3.
+Step 3.
 
 ---
 
@@ -108,7 +108,7 @@ Commission
 
 The famous deductible
 
-Ex 4.
+Step 4.
 
 ---
 
@@ -120,7 +120,7 @@ The deductible
 
 Pay the actors
 
-Ex 5.
+Step 5.
 
 ---
 
