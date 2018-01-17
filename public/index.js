@@ -141,6 +141,43 @@ const actors = [{
   }]
 }];
 
+function FindTheTruck(truckerId)
+{
+  var i = 0;
+  while(i<truckers.length)
+  {
+    if(truckers[i].id==truckerId)
+    {
+      return truckers[i];
+    }
+    i++;
+  }
+  return null;
+}
+
+function SetThePrices(deliveries)
+{
+  var i =0;
+  while (i<deliveries.length)
+  {
+    var truck = FindTheTruck(deliveries[i].truckerId);
+    if(truck!=null)
+    {
+      deliveries[i].price=deliveries[i].volume*truck.pricePerVolume+deliveries[i].distance*truck.pricePerKm;
+    }
+    i++;
+  }
+}
+
+
+
+
+
+
+
+
+
+SetThePrices(deliveries);
 console.log(truckers);
 console.log(deliveries);
 console.log(actors);
