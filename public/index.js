@@ -163,7 +163,22 @@ function SetThePrices(deliveries)
     var truck = FindTheTruck(deliveries[i].truckerId);
     if(truck!=null)
     {
-      deliveries[i].price=deliveries[i].volume*truck.pricePerVolume+deliveries[i].distance*truck.pricePerKm;
+      if(deliveries[i].volume > 25)
+      {
+        deliveries[i].price=0.01*Math.round(100*(deliveries[i].volume*truck.pricePerVolume*0.5+deliveries[i].distance*truck.pricePerKm));
+      }
+      else if (deliveries[i].volume > 10)
+      {
+        deliveries[i].price=0.01*Math.round(100*(deliveries[i].volume*truck.pricePerVolume*0.7+deliveries[i].distance*truck.pricePerKm));
+      }
+      else if(deliveries[i].volume > 5)
+      {
+        deliveries[i].price=0.01*Math.round(100*(deliveries[i].volume*truck.pricePerVolume*0.9+deliveries[i].distance*truck.pricePerKm));
+      }
+      else
+      {
+        deliveries[i].price=0.01*Math.round(100*(deliveries[i].volume*truck.pricePerVolume+deliveries[i].distance*truck.pricePerKm));
+      }
     }
     i++;
   }
