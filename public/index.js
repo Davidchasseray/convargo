@@ -183,14 +183,20 @@ function SetThePrices(deliveries)
         deliveries[i].price=0.01*Math.round(100*(deliveries[i].volume*truck.pricePerVolume+deliveries[i].distance*truck.pricePerKm));
       }
     }
-    //treat the commision
-    var commission = 0.01*Math.round(30* deliveries[i].price)
-    deliveries[i].commission.insurance=commission*0.5
+    //pay everyone
+    var deductibleReduction = 0
+    if(deliveries[i].options.deductibleReduction)
+    { //for now the commission is not afected. 
+      deliveries[i].price+=deliveries[i].volume
+      deductibleReduction +=deliveries[i].volume
+    }
+    var commission = 0.01*Math.round(30* (deliveries[i].price-deductibleReduction))
+    deliveries[i].commission.insurance+=commission*0.5
     commission-=deliveries[i].commission.insurance
     var tax = Math.trunc(deliveries[i].distance/500)
     commission-=tax;
-    deliveries[i].commission.treasury=tax;
-    deliveries[i].commission.convargo=commission;
+    deliveries[i].commission.treasury+=tax;
+    deliveries[i].commission.convargo+=commission;
     i++;
   }
 }
